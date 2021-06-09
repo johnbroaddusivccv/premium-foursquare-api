@@ -45,7 +45,8 @@ export default class App extends Component {
           <button type="submit">Search</button>
         </form>
         <ul>
-          {this.state.venues.map(venue=>{return <li key={venue.id}>{venue.name}</li>})}
+          {/* {this.state.venues.map(venue=>{return <li key={venue.id}>{venue.name}</li>})} */}
+          {this.state.venues.map(venue=>{return <ul><li>{venue.id}</li></ul>})}
       </ul>
       </div>
     )
