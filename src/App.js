@@ -11,7 +11,8 @@ export default class App extends Component {
     this.state = {
        latlong: '',
        searchInput:"",
-       venues: []
+       venues: [],
+       venue_id: []
     }
   }
   
@@ -32,9 +33,13 @@ export default class App extends Component {
       limit: 50,
       v: "20180323"
     };
+
+
     
     axios.get(endPoint + new URLSearchParams(params)).then(response => this.setState({venues: response.data.response.venues}));
   }
+
+  
   
   
   render() {
@@ -46,7 +51,10 @@ export default class App extends Component {
         </form>
         <ul>
           {/* {this.state.venues.map(venue=>{return <li key={venue.id}>{venue.name}</li>})} */}
-          {this.state.venues.map(venue=>{return <ul><li>{venue.id}</li></ul>})}
+{this.state.venues.map(venue_id=>{return <li>{venue_id.id}</li>})
+      
+    }
+
       </ul>
       </div>
     )
